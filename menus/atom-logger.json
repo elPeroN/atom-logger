@@ -17,6 +17,10 @@
             {
               "label": "Toggle",
               "command": "atom-logger:toggle"
+            },
+            {
+              "label": "Dashboard",
+              "command": "atom-logger:showDash"
             }
           ]
         }
