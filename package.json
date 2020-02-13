@@ -3,11 +3,15 @@
   "main": "./lib/atom-logger",
   "version": "0.0.0",
   "description": "A short description of your package",
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
   "keywords": [
   ],
-  "activationCommands": {
-    "atom-workspace": "atom-logger:toggle"
-  },
   "repository": "https://github.com/atom/atom-logger",
   "license": "MIT",
   "engines": {
