@@ -5,20 +5,59 @@
 @import "ui-variables";
 
 .atom-logger {
-  width: 300px;
+  width: 310px;
 }
 
-h2 {
+.atom-logger-title, .atom-logger-stopwatch  {
   text-align: center;
 }
 
-input[type=text], input[type=password] {
-  width: 90%;
+.atom-logger-textfield {
+  width: 95%;
   padding: 8px;
   margin: 8px;
   display: inline-block;
 }
 
-button {
+.atom-logger-button {
+  width: 85px;
+  height: 25px;
+  color: #9da5b4;
   margin: 8px;
+  border-radius: 3px;
+  background-color: #353b45;
+  border: 1px solid black;
+}
+
+.atom-logger-button:hover {
+  opacity: 0.8;
+}
+
+.tabButton:first-child {
+  border-right: 1px solid black;
+}
+
+.tabButton {
+  border: none;
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0.5;
+}
+
+.tabButton.active {
+  color: white;
+  opacity: 1;
+  border-bottom: none;
+}
+
+.tabButton:hover {
+  color: white;
+}
+
+.atom-logger-footer{
+  position: fixed;
+  bottom: 50px;
 }
