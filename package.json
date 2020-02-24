@@ -10,13 +10,24 @@
       }
     }
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "repository": "https://github.com/atom/atom-logger",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest",
+    "electron-rebuild": "^1.10.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "build",
+    "rebuild": "electron-rebuild -f -w sqlite3"
   }
 }

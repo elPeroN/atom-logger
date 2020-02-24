@@ -4998,3 +4998,4 @@
 .scannerwork/css-bundle/node_modules/stylelint/node_modules/postcss-jsx/template-safe-parser.js
 .vscode/settings.json
 .project
+node_modules/*
