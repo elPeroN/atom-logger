@@ -1,6 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "atom-logger:toggle",
-    "ctrl-alt-p": "atom-logger:showDash"
+    "ctrl-alt-o": "atom-logger:dashboard"
   }
 }

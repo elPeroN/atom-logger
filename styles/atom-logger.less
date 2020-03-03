@@ -39,6 +39,7 @@
 
 .tabButton {
   border: none;
+  border-top: 1px solid black;
   padding: 5px 0 5px 0;
   border-bottom: 1px solid black;
   outline: none;
@@ -60,4 +61,25 @@
 .atom-logger-footer{
   position: fixed;
   bottom: 50px;
+}
+
+.atom-logger-close {
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  padding: 3px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.atom-logger-close:hover {
+  color: black;
+  background-color: #568af2;
+  border-radius: 3px;
+}
+
+.logged {
+  float: left;
 }
