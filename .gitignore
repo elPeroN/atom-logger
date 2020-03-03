@@ -4999,4 +4999,4 @@
 .vscode/settings.json
 .project
 node_modules/*
-/.metadata/
+*.log
