@@ -21,11 +21,13 @@
     "diff-utils": "0.0.1",
     "jsdiff": "^1.1.1",
     "network": "^0.5.0",
-    "sqlite3": "^4.1.1"
+    "simple-node-logger": "^18.12.24",
+    "sqlite3": "^4.1.1",
+    "user-home": "^2.0.0"
   },
   "devDependencies": {
-    "electron": "latest",
-    "electron-builder": "latest",
+    "electron": "^4.2.12",
+    "electron-builder": "^22.3.2",
     "electron-rebuild": "^1.10.0"
   },
   "scripts": {
