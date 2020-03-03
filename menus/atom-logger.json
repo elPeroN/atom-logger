@@ -3,7 +3,7 @@
     "atom-text-editor": [
       {
         "label": "Toggle atom-logger",
-        "command": "atom-logger:toggle"
+        "command": "atom-logger:dashboard"
       }
     ]
   },
@@ -15,12 +15,8 @@
           "label": "atom-logger",
           "submenu": [
             {
-              "label": "Toggle",
-              "command": "atom-logger:toggle"
-            },
-            {
               "label": "Dashboard",
-              "command": "atom-logger:showDash"
+              "command": "atom-logger:dashboard"
             }
           ]
         }
