@@ -8,78 +8,48 @@
   width: 310px;
 }
 
-.atom-logger-title, .atom-logger-stopwatch  {
-  text-align: center;
+.atom-logger-title  {
+  color: @text-color-highlight;
+  float: left;
 }
 
 .atom-logger-textfield {
-  width: 95%;
+  width: 90%;
   padding: 8px;
   margin: 8px;
   display: inline-block;
 }
 
 .atom-logger-button {
-  width: 85px;
-  height: 25px;
-  color: #9da5b4;
   margin: 8px;
-  border-radius: 3px;
-  background-color: #353b45;
-  border: 1px solid black;
-}
-
-.atom-logger-button:hover {
-  opacity: 0.8;
-}
-
-.tabButton:first-child {
-  border-right: 1px solid black;
-}
-
-.tabButton {
-  border: none;
-  border-top: 1px solid black;
-  padding: 5px 0 5px 0;
-  border-bottom: 1px solid black;
-  outline: none;
-  background-color: inherit;
-  width: 50%;
-  opacity: 0.5;
-}
-
-.tabButton.active {
-  color: white;
-  opacity: 1;
-  border-bottom: none;
-}
-
-.tabButton:hover {
-  color: white;
-}
-
-.atom-logger-footer{
-  position: fixed;
-  bottom: 50px;
 }
 
 .atom-logger-close {
-  width: 23px;
-  height: 23px;
-  text-align: center;
-  padding: 3px;
-  margin: 10px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
 }
 
-.atom-logger-close:hover {
-  color: black;
-  background-color: #568af2;
-  border-radius: 3px;
+.atom-logger-close-panel {
+  position: absolute;
+  right: 5px;
 }
 
-.logged {
+.atom-logger-close-panel:hover {
+  color: @text-color-highlight;
+}
+
+.atom-logger-warning {
+  color: @text-color-warning;
+}
+
+.atom-logger-icon {
   float: left;
+}
+
+.atom-logger-label {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
 }
