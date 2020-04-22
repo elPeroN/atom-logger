@@ -1,12 +1,10 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,10pt]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[colorlinks, urlcolor=blue, linkcolor=black]{hyperref}
 \usepackage{nameref}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{float}
+\usepackage{graphicx, subcaption, float, wrapfig, lipsum}
 \graphicspath{ {./Diagrams/} }
 \makeatletter
 \newcommand*{\currentname}{\@currentlabelname}
@@ -22,17 +20,178 @@
 \tableofcontents
 
 \newpage
-
+%****************************************************************************************
 \chapter{Description of the product}
-
+%------------------------------------------------------------------------------------
 \section{Scope}
 
-	The project main purpose is to provide programmers with a tool to monitor their statistics regarding their coding sessions.
+The project main purpose is to provide programmers with a tool to monitor their statistics regarding their coding sessions.
 	In particular the Atom-Logger plugin captures added, modified or deleted lines of code, comments and tests. It also intercepts Atom's \textbf{native functions}. On the contrary it ignores operations such as \emph{cut, backspace, paste, enter, copy, save, undo, redo}.\\
-	The users can observe their data usage both via a web interface \textbf{dashboard}, that also shows working time on given files, or inspecting the plugin interface itself, which shows \textbf{charts} related to the last seven days activity. 
+	The users can observe their data usage both via a web interface \textbf{dashboard}, that also shows working time on given files, or inspecting the plugin interface itself, which shows \textbf{charts} related to the last seven days activity.\\
+The programming languages we used are JavaScript, as requested for every Atom's package.\\
+\textbf{Osservazione (da verificare)} Differenze tra Java e Javascript: meno linee di codice, Documentarlo perchè è interessante.\\
 
+\begin{center}
+ \begin{tabular}{|c | c | c | c | c |}
+ \hline
+ \multicolumn{5}{|c|}{Atom editor source code statistics *}\\
+ \hline
+ Language & files & blank & comment & loc \\ [0.5ex] 
+ \hline\hline
+ JavaScript & 349 & 13'593 & 10'137 & 139'139\\ 
+ \hline
+ JSON & 95 & 5 & 0 & 36'009\\ 
+ \hline
+ LESS & 206 & 2'442 & 1'217 & 11'223\\
+ \hline
+ Markdown & 77 & 2'892 & 0 & 7'362\\
+ \hline
+ CoffeeScript & 75 & 1'139 & 437 & 4'874\\
+ \hline
+ XML & 3 & 0 & 0 & 1'608\\
+ \hline
+ CSON & 51 & 102 & 83 & 1'601\\
+ \hline
+ YAML & 10 & 103 & 34 & 678\\
+ \hline
+ Bourne Shell & 13 & 95 & 187 & 507\\
+ \hline
+ SVG & 5 & 0 & 0 & 128\\
+ \hline
+ DOS Batch & 8 & 6 & 0 & 79\\
+ \hline
+ CSS & 9 & 1 & 2 & 33\\
+ \hline
+ Dockerfile & 1 & 4 & 4 & 12\\
+ \hline
+ HTML & 1 & 0 & 0 & 9\\
+ \hline
+ EJS & 1 & 2 & 0 & 7\\
+ \hline
+ TypeScript & 2 & 0 & 0 & 3\\
+ \hline
+ Ruby & 1 & 1 & 0 & 2\\ 
+ \hline
+ \hline
+ Total & 907 & 20'385 & 12'101 & 203'274\\ [1ex]
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+ \begin{tabular}{|c | c | c | c | c |}
+ \hline
+ \multicolumn{5}{|c|}{Atom-Logger source code statistics *}\\
+ \hline
+ Language & files & blank & comment & loc \\ [0.5ex] 
+ \hline\hline
+ JSON & 4 & 0 & 0 & 3661\\
+ \hline
+ JavaScript & 15 & 218 & 56 & 1'039\\
+ \hline
+ TeX & 1 & 61 & 0 & 91\\
+ \hline
+ LESS & 1 & 11 & 4 & 46\\
+ \hline
+ Markdown & 1 & 15 & 0 & 17\\
+ \hline
+ XML & 1 & 0 & 0 & 11\\
+ \hline
+ \hline
+ Total: & 23 & 305 & 60 & 4'865\\ [1ex]
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+ \begin{tabular}{|c | c | c | c | c |}
+ \hline
+ \multicolumn{5}{|c|}{Eclipse-Logger source code statistics *}\\
+ \hline
+ Language & files & blank & comment & loc \\ [0.5ex] 
+ \hline\hline
+ Java & 11 & 193 & 6 & 859\\
+ \hline
+ XML & 3 & 0 & 0 & 127\\
+ \hline
+ INI & 1 & 0 & 0 & 7\\
+ \hline
+ Markdown & 1 & 1 & 0 & 1\\
+ \hline
+ \hline
+ Total: & 16 & 194 & 5 & 994\\ [1ex]
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+ \begin{tabular}{|c | c | c | c | c |}
+ \hline
+ \multicolumn{5}{|c|}{Intellij-Logger source code statistics *}\\
+ \hline
+ Language & files & blank & comment & loc \\ [0.5ex] 
+ \hline\hline
+ XML & 40 & 3'167 & 0 & 64'883\\
+ \hline
+ Java & 52 & 981 & 4727 & 5581\\
+ \hline
+ SVG & 20 & 0 & 0 & 179\\
+ \hline
+ Bourne Shell & 1 & 21 & 22 & 129\\
+ \hline
+ DOS Batch & 1 & 23 & 2 & 59\\
+ \hline
+ Gradle & 2 & 8 & 2 & 29\\
+ \hline
+ \hline
+ Total: & 116 & 4'200 & 4'753 & 70'860\\ [1ex]
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+\newpage
+%\begin{wrapfigure}{R}{2cm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.55\linewidth]{main}
+	\caption{The main interface}
+	\label{fig:main}
+\end{figure}
+
+After the users successfully log in they are presented a pane as shown in Figure \ref{fig:main} reporting:
+
+\begin{itemize}
+	\item The number of metrics that are stored locally, that will be sent to the server after the timeout is elapsed;
+	\item The time passed since the beginning of the session.
+	\item One chart for code changes
+	\item One chart for comments changes
+	\item One chart for tests changes
+\end{itemize}
+
+\newpage
+If the users prefer, they can do some changes in the settings (Figure \ref{fig:settings}).
+
+
+
+
+\begin{figure}[h]
+	\centering 
+	\includegraphics[width=\linewidth]{settings}
+	\caption{The settings pane}
+	\label{fig:settings}
+\end{figure}
+
+
+
+\newpage
+%------------------------------------------------------------------------------------
 \section{Use cases}
-
 
 \begin{figure}[H]
 	\centering
@@ -48,98 +207,106 @@
     \label{fig:web}
 \end{figure}
 
-Here in \ref{fig:plugin} we talk about Jesus.\\
-Here instead \ref{fig:web} we talk about Mary.\\
+In figure \ref{fig:plugin} we can see how a registered user can interact with the plugin.\\
+Instead in figure \ref{fig:web} we can see how a generic user (registered or not) can interact with the web platform.\\
 
-
+%------------------------------------------------------------------------------------
 \section{Product backlog}
-\newpage
 
+%****************************************************************************************
 \chapter{Description of the process}
+(sprint, backlog di sprint, burndown, test fatti, demo?, retrospettive?, diari dei partecipanti e/o diario di gruppo)
+%------------------------------------------------------------------------------------
 \section{Sprints}
-
+%------------------------------------------------------------------------------------
 \section{Backlog sprints}
-
+%------------------------------------------------------------------------------------
 \section{Burndown}
-
+%------------------------------------------------------------------------------------
 \section{Tests}
-
+%------------------------------------------------------------------------------------
 \section{Demos}
-
+%****************************************************************************************
 \chapter{Description of CAS services}
-
+%------------------------------------------------------------------------------------
 \section[Taiga]{Taiga}
 Taiga gave us the opportunity to manage our project in an \textbf{Agile} way. \\
-In our case study we have used the \textbf{Kanban} feature to create several \textbf{user stories}, to split the various parts of the plugin in atomic tasks. With the \textbf{Backlog} module we were able to monitor the overall progress of our work, keeping track of project points as user stories were completed. When one of us had something to report to the team, i.e. a bug or a problem not expected, he could add a new issue through the \textbf{Issues} module.
+In our case study we have used the \textbf{Kanban} feature to create several \textbf{user stories}, to split the coding of the various features and functions in smaller tasks. With the \textbf{Backlog} module we were able to monitor the overall progress of our work, keeping track of project points as user stories were completed. When one of us had something to report to the team, i.e. a bug or a problem not expected, he could add a new issue through the \textbf{Issues} module.
+Also we used the \textbf{Meet up} option to start voice/video calls, we linked it with our messaging platform.
 In the \textbf{Wiki} we give an overview of our product to other users.\\
 In order to use Taiga we simply signed up to the self-hosted image running on the aminsep's server and then used the web app through the browser.
-
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\linewidth]{taiga1}
+    \caption{taiga issues.}
+    \label{fig:taiga1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\linewidth]{taiga2}
+    \caption{Taiga timeline.}
+    \label{fig:taiga2}
+\end{figure}
+%------------------------------------------------------------------------------------
 \section{Sonar}
-We used \textbf{SonarScanner} to perform static code analysis, because this was done on a machine that runs Manjaro Linux and therefore there were not any specific scanners. Once again the server was the one hosted by aminsep, with preset rules to detect various code smells, security vulnerabilities and bugs. 
-In the first place we have been given personal accounts registered on the platform, we created the token linked to our project, so that every time we ran a new analysis the tool could dialogue with the server using the token to determine which project the data belonged to.
-We ran an analysis every time we had produced a new version of the project, using the tool in the CLI. The results were stored on the server.\newpage
+We used \textbf{SonarScanner} to perform static code analysis, because this was done on a machine that runs Manjaro Linux and therefore there were not any specific scanners built for that operating system. Once again the server was the one hosted by aminsep, with preset rules to detect various code smells, security vulnerabilities and bugs. 
+In the first place we have been given personal accounts registered on the platform, we created a \textbf{token} linked to our project, so that every time we ran a new analysis the tool could dialogue with the server using the token to determine which project the data belonged to.
+We ran an analysis every time we had produced a new version of the project, using the scanner via CLI. The results were stored on the server.
 
 \begin{figure}[H]
 	\centering
     \includegraphics[width=\linewidth]{sonar-scanner}
-    \caption{Plugin.}
-    \label{fig:plugin}
+    \caption{Sonar.}
+    \label{fig:sonar}
 \end{figure}
-
+%------------------------------------------------------------------------------------
 \section[GitLab] {GitLab}
-Gitlab is a web platform that we used to manage our git-repository via CLI, web interface and IDE plugins.
-As for our project we mostly made use of pre-existant plugins provided for the IDEs we used (i.e. Code-OSS, Atom, Eclipse) for the client side, and the instance hosted by the aminsep server for the server side. The web interface was rarely used for commits or inspecting code, lastly the CLI was used only once to remove some sensitive data accidentally committed.
-
+Gitlab is a web platform that we used to manage our \textbf{git-repository} via CLI, web interface and IDE plugins.
+As for our project we mostly made use of pre-existant plugins provided for the IDEs we used (i.e. Code-OSS, Atom, Eclipse) for the client side, and the instance hosted by the aminsep server for the server side. The web interface was sometimes used for commits or inspecting code, lastly the CLI was used only once to remove some sensitive data accidentally committed.
+%------------------------------------------------------------------------------------
 \section[Mattermost] {Mattermost}
-Mattermost is a self-hosted messaging platform, available for the vast majority of desktop and mobile devices (iOS, Android, Windows, MacOS, Linux). It allows to organize conversations in teams and channels, so that you can keep in touch with other team members using text messages, voice and video calls, sharing your screen, sending files or images. \\
-We found it particularly useful since our team has been forced to work apart because of the SARS-CoV-2 pandemic. \\
-Our team installed the client both on laptops (Windows, Linux) and smartphones (Android) and  used the aminsep's server. At the beginning we had voice calls for the planning and design phase, later on we scheduled weekly meetings to track the progress of the process and used daily/random meetings in case some of us needed to talk to another member to figure out something he had a problem with.
+Mattermost is a self-hosted messaging platform, available for the vast majority of desktop and mobile devices. It allows to organize conversations in teams and channels, so that you can keep in touch with other team members using text messages, sending files or images. \\
+\textbf{As for our experience we did not find it very useful, since the lack of the voice call and screen sharing features which we consider fundamental}. For this reason we opted for external services, one for voice and video calls and one for text messaging and file sharing.\\
+We found the so called smart-working particularly useful since our team has been forced to work apart because of the \textbf{SARS-CoV-2 pandemic}. \\
+At the beginning we had voice calls for the planning and design phase, later on we scheduled weekly meetings to track the progress of the process and used daily/random meetings in case some of us needed to talk to another member to figure out something he had a problem with.
 During the developing and testing phase we mostly used screen sharing for debugging and pair programming: one of us shared his screen while working on the code, the others reviewed the code produced.
-
+%****************************************************************************************
 \chapter{Description of artifacts}
 Scrum Artifacts (3:48)
 
 In this module, you’ll see how the three Scrum Artifacts — the Product Backlog, the Sprint Backlog, and the product Increment — share the same goals: to maximize transparency, and promote a shared understanding of the work. Main takeaway: The Product Backlog and Sprint Backlog describe work to be "Done" that will add value, and the product Increment is the “Done” portion of the product completed during a Sprint.
-
+%------------------------------------------------------------------------------------
 \section{Product Backlog}
-
+%------------------------------------------------------------------------------------
 \section{Sprint Backlog}
-
+%------------------------------------------------------------------------------------
 \section{Product Increment}
-
+%****************************************************************************************
 \chapter{Conclusions (cosa avete imparato, cosa è andato bene, cosa cambiereste)}
-
+%------------------------------------------------------------------------------------
 \section{Things learned}
 -User Stories really help to manage complexity.\\
 -Difficult to adopt agile in a team where no one had agile experience, but that made us put even more effort allowing us to get accustomed to a new working approach.\\
--Face to face meetings are for sure what the human brain can get the best from in a working environment (https://www.entrepreneur.com/article/296590). But conference calls are a useful ally
-
+-Face to face meetings are for sure what the human brain can get the best from in a working environment (https://www.entrepreneur.com/article/296590). But conference calls are a useful ally.\\
+-When working in a team, using a version control system (i.e. GitLab) is mandatory.\\
+%------------------------------------------------------------------------------------
 \section{Things ok}
+%------------------------------------------------------------------------------------
+\begin{itemize}
+	\item As mentioned before we worked only from distance: this way of developing can be very useful in emergency situations like the one we have been in, or for teams that have members that live far away from one another.\\
 
--As mentioned before we worked only from distance: this way of developing can be very useful in emergency situations like the one we have been in, or for teams that have members that live far away from one another.\\
+\end{itemize}
 \section{Things to change}
--More PO involvement?\\
--Maybe build an IDE (or a plugin) with full CAS support, allowing the user to have a ready to use tool just signing in to a single service.
+\begin{itemize}
+	\item Not really convenient to have different accounts for every service, it would be reasonable to implement a single sign-on.
+	\item Putting together a team of people who have no agile experience requires an adaptation period to understand how to use the various tools. Because of this, in the beginning operations take a little bit longer. It would be useful to have a little introduction to the CAS environment before.
+
+\end{itemize}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\footnote{\href{insert link here}{text of footnote}}
 
 
 
