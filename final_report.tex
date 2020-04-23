@@ -21,7 +21,7 @@
 
 \newpage
 %****************************************************************************************
-\chapter{Description of the product}
+\chapter{Description of the product} %TODO
 %------------------------------------------------------------------------------------
 \section{Scope}
 
@@ -29,7 +29,7 @@ The project main purpose is to provide programmers with a tool to monitor their 
 	In particular the Atom-Logger plugin captures added, modified or deleted lines of code, comments and tests. It also intercepts Atom's \textbf{native functions}. On the contrary it ignores operations such as \emph{cut, backspace, paste, enter, copy, save, undo, redo}.\\
 	The users can observe their data usage both via a web interface \textbf{dashboard}, that also shows working time on given files, or inspecting the plugin interface itself, which shows \textbf{charts} related to the last seven days activity.\\
 The programming languages we used are JavaScript, as requested for every Atom's package.\\
-\textbf{Osservazione (da verificare)} Differenze tra Java e Javascript: meno linee di codice, Documentarlo perchè è interessante.\\
+\textbf{Osservazione (da verificare)} Differenze tra Java e Javascript: meno linee di codice, Documentarlo perchè è interessante.\\ %TODO
 
 \begin{center}
  \begin{tabular}{|c | c | c | c | c |}
@@ -167,11 +167,11 @@ The programming languages we used are JavaScript, as requested for every Atom's 
 After the users successfully log in they are presented a pane as shown in Figure \ref{fig:main} reporting:
 
 \begin{itemize}
-	\item The number of metrics that are stored locally, that will be sent to the server after the timeout is elapsed;
-	\item The time passed since the beginning of the session.
-	\item One chart for code changes
-	\item One chart for comments changes
-	\item One chart for tests changes
+	\item The number of metrics that are stored locally, that will be sent to the server after the timeout expires;
+	\item The time elapsed since the beginning of the session;
+	\item One chart for code changes;
+	\item One chart for comments changes;
+	\item One chart for tests changes.
 \end{itemize}
 
 \newpage
@@ -191,7 +191,7 @@ If the users prefer, they can do some changes in the settings (Figure \ref{fig:s
 
 \newpage
 %------------------------------------------------------------------------------------
-\section{Use cases}
+\section{Use cases} %TODO
 
 \begin{figure}[H]
 	\centering
@@ -211,25 +211,25 @@ In figure \ref{fig:plugin} we can see how a registered user can interact with th
 Instead in figure \ref{fig:web} we can see how a generic user (registered or not) can interact with the web platform.\\
 
 %------------------------------------------------------------------------------------
-\section{Product backlog}
+\section{Product backlog} %TODO
 
 %****************************************************************************************
-\chapter{Description of the process}
+\chapter{Description of the process} %TODO
 (sprint, backlog di sprint, burndown, test fatti, demo?, retrospettive?, diari dei partecipanti e/o diario di gruppo)
 %------------------------------------------------------------------------------------
-\section{Sprints}
+\section{Sprints} %TODO
 %------------------------------------------------------------------------------------
-\section{Backlog sprints}
+\section{Backlog sprints} %TODO
 %------------------------------------------------------------------------------------
-\section{Burndown}
+\section{Burndown} %TODO
 %------------------------------------------------------------------------------------
-\section{Tests}
+\section{Tests} %TODO
 %------------------------------------------------------------------------------------
-\section{Demos}
+\section{Demos} %TODO
 %****************************************************************************************
-\chapter{Description of CAS services}
+\chapter{Description of CAS services} %TODO
 %------------------------------------------------------------------------------------
-\section[Taiga]{Taiga}
+\section[Taiga]{Taiga} %TODO
 Taiga gave us the opportunity to manage our project in an \textbf{Agile} way. \\
 In our case study we have used the \textbf{Kanban} feature to create several \textbf{user stories}, to split the coding of the various features and functions in smaller tasks. With the \textbf{Backlog} module we were able to monitor the overall progress of our work, keeping track of project points as user stories were completed. When one of us had something to report to the team, i.e. a bug or a problem not expected, he could add a new issue through the \textbf{Issues} module.
 Also we used the \textbf{Meet up} option to start voice/video calls, we linked it with our messaging platform.
@@ -238,17 +238,17 @@ In order to use Taiga we simply signed up to the self-hosted image running on th
 \begin{figure}[H]
 	\centering
     \includegraphics[width=\linewidth]{taiga1}
-    \caption{taiga issues.}
+    \caption{Taiga issues page}
     \label{fig:taiga1}
 \end{figure}
 \begin{figure}[H]
 	\centering
     \includegraphics[width=\linewidth]{taiga2}
-    \caption{Taiga timeline.}
+    \caption{Taiga timeline page}
     \label{fig:taiga2}
 \end{figure}
 %------------------------------------------------------------------------------------
-\section{Sonar}
+\section{Sonar} %TODO
 We used \textbf{SonarScanner} to perform static code analysis, because this was done on a machine that runs Manjaro Linux and therefore there were not any specific scanners built for that operating system. Once again the server was the one hosted by aminsep, with preset rules to detect various code smells, security vulnerabilities and bugs. 
 In the first place we have been given personal accounts registered on the platform, we created a \textbf{token} linked to our project, so that every time we ran a new analysis the tool could dialogue with the server using the token to determine which project the data belonged to.
 We ran an analysis every time we had produced a new version of the project, using the scanner via CLI. The results were stored on the server.
@@ -260,46 +260,54 @@ We ran an analysis every time we had produced a new version of the project, usin
     \label{fig:sonar}
 \end{figure}
 %------------------------------------------------------------------------------------
-\section[GitLab] {GitLab}
+\section[GitLab] {GitLab} %TODO
 Gitlab is a web platform that we used to manage our \textbf{git-repository} via CLI, web interface and IDE plugins.
 As for our project we mostly made use of pre-existant plugins provided for the IDEs we used (i.e. Code-OSS, Atom, Eclipse) for the client side, and the instance hosted by the aminsep server for the server side. The web interface was sometimes used for commits or inspecting code, lastly the CLI was used only once to remove some sensitive data accidentally committed.
 %------------------------------------------------------------------------------------
-\section[Mattermost] {Mattermost}
+\section[Mattermost] {Mattermost} %TODO
 Mattermost is a self-hosted messaging platform, available for the vast majority of desktop and mobile devices. It allows to organize conversations in teams and channels, so that you can keep in touch with other team members using text messages, sending files or images. \\
-\textbf{As for our experience we did not find it very useful, since the lack of the voice call and screen sharing features which we consider fundamental}. For this reason we opted for external services, one for voice and video calls and one for text messaging and file sharing.\\
-We found the so called smart-working particularly useful since our team has been forced to work apart because of the \textbf{SARS-CoV-2 pandemic}. \\
-At the beginning we had voice calls for the planning and design phase, later on we scheduled weekly meetings to track the progress of the process and used daily/random meetings in case some of us needed to talk to another member to figure out something he had a problem with.
+\textbf{As for our experience we did not find Mattermost useful, since the lack of the voice call and screen sharing features which we consider fundamental}. For this reason we opted for the use of external services, one for voice and video calls and one for text messaging and file sharing.\\
+Since the \textbf{SARS-CoV-2 pandemic} started we've not been able to meet or work together in the same room, therefore the so called "smart-working" has been of great help as in fact we only once had the chance to work together in person. \\
+In the beginning we had voice calls for the planning and design phase, later on we scheduled weekly meetings to track the progress of the process and used daily/random meetings in case some of us needed to talk to another member to figure out something he had a problem with.
 During the developing and testing phase we mostly used screen sharing for debugging and pair programming: one of us shared his screen while working on the code, the others reviewed the code produced.
 %****************************************************************************************
-\chapter{Description of artifacts}
+\chapter{Description of artifacts} %TODO
 Scrum Artifacts (3:48)
 
 In this module, you’ll see how the three Scrum Artifacts — the Product Backlog, the Sprint Backlog, and the product Increment — share the same goals: to maximize transparency, and promote a shared understanding of the work. Main takeaway: The Product Backlog and Sprint Backlog describe work to be "Done" that will add value, and the product Increment is the “Done” portion of the product completed during a Sprint.
 %------------------------------------------------------------------------------------
-\section{Product Backlog}
+\section{Product Backlog} %TODO
 %------------------------------------------------------------------------------------
-\section{Sprint Backlog}
+\section{Sprint Backlog} %TODO
 %------------------------------------------------------------------------------------
-\section{Product Increment}
+\section{Product Increment} %TODO
+In other more freeform agile frameworks, such as Kanban (see What is Kanban), product increments are also created but they are less commonly based upon what is completed in a fixed period, and more so on what is meaningful for the product to be released into production. This might mean that product increments could be released in cycles ranging from minutes to months.\\
+\textbf{Dato che abbiamo fatto un solo sprint di produzione non ha senso parlare di PI}
 %****************************************************************************************
-\chapter{Conclusions (cosa avete imparato, cosa è andato bene, cosa cambiereste)}
+\chapter{Conclusions} %TODO
 %------------------------------------------------------------------------------------
-\section{Things learned}
--User Stories really help to manage complexity.\\
--Difficult to adopt agile in a team where no one had agile experience, but that made us put even more effort allowing us to get accustomed to a new working approach.\\
--Face to face meetings are for sure what the human brain can get the best from in a working environment (https://www.entrepreneur.com/article/296590). But conference calls are a useful ally.\\
--When working in a team, using a version control system (i.e. GitLab) is mandatory.\\
-%------------------------------------------------------------------------------------
-\section{Things ok}
-%------------------------------------------------------------------------------------
+\section{What we learned} %TODO
 \begin{itemize}
-	\item As mentioned before we worked only from distance: this way of developing can be very useful in emergency situations like the one we have been in, or for teams that have members that live far away from one another.\\
-
+	
+	\item Adopting the Agile philosophy is no easy task, especially for someone who has no practical experience on the matter, but we think it is the best way of managing a project. After you get accustomed to, it feels natural and just right.\\
+	Our vision on how to approach a project has changed, in better we believe. It is for sure more clear and organized than before.
+	\item Face to face meetings are for sure what the human brain can get the best from in a working environment.\footnote{\href{https://www.entrepreneur.com/article/296590}{entrepreneur article}} But conference calls are a useful ally as we mentioned early, and the realization of this project would not have been possible without the tools we used. 
+	%TODO add reference https://www.sciencedirect.com/science/article/pii/S002210311630292X
+	\item When working in a team, using a version control system (i.e. GitLab) is mandatory. It takes off the table the overhead of keeping all files in sync, provides a plain vision of what has changed between different versions of the same file and last but not least allows you to do rollbacks safely.
 \end{itemize}
-\section{Things to change}
+%------------------------------------------------------------------------------------
+\section{What worked well} %DONE
+%------------------------------------------------------------------------------------
 \begin{itemize}
-	\item Not really convenient to have different accounts for every service, it would be reasonable to implement a single sign-on.
-	\item Putting together a team of people who have no agile experience requires an adaptation period to understand how to use the various tools. Because of this, in the beginning operations take a little bit longer. It would be useful to have a little introduction to the CAS environment before.
+	\item As mentioned before we worked only from \textbf{distance}: this way of developing can be very useful in \textbf{emergency situations} like the one we have been in, or for teams that have members that live \textbf{far away} from one another.
+	\item The practice of writing \textbf{User Stories} not only gives the team a more clear vision of what the features of the product are, but also helps managing the complexity of the whole project: ideally each story addresses one functionality of the product, allowing the developer to focus only on that specific piece of code, leaving the rest for later. This is a key also to distribute the work between all the members of the team.
+	\item Running \textbf{static analysis} on code gives you a first feedback of what you wrote, before delving into debugging and testing, this often results in minutes, maybe hours of precious time saved. It is pretty useful to see all the security vulnerabilities, code smells and bugs to fix with the very number of the line of code they are located.
+\end{itemize}
+\section{What we think should change} %DONE
+\begin{itemize}
+	\item We unfortunately did not make any use of \textbf{Mattermost}, because without video-calls and screen-sharing we struggled a lot. These, we think, are features that are crucial when a team has to work from different places. It would be preferable if \textbf{another version} of Mattermost was given to the students, one with the aforementioned features.
+	\item It is not really convenient to have different accounts for every service, it would be reasonable to implement a single sign-on.
+	\item Putting together a team of people who have no agile experience requires an adaptation period to understand how to use the various tools. Because of this, in the beginning operations took a little bit longer. It would be useful to have a little introduction to the CAS environment before.
 
 \end{itemize}
 
@@ -313,6 +321,7 @@ In this module, you’ll see how the three Scrum Artifacts — the Product Backl
 
 
 \begin{abstract}
+	%TODO ?
 \end{abstract}
 
 
