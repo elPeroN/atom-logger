@@ -30,3 +30,13 @@ Atom editor activity logger
   > apm link
 
 * Reload Atom.
+
+If the user encounters this error:
+Cannot find module /$INSTALL_FOLDER/node_modules/sqlite3/lib/binding/electron-v4.2-linux-x64/node_sqlite3.node
+
+He should run:
+  > apm install
+  
+  > apm link
+    
+And then restart Atom.
