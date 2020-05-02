@@ -4,8 +4,8 @@
 \usepackage{lmodern}
 \usepackage[colorlinks, urlcolor=blue, linkcolor=black]{hyperref}
 \usepackage{nameref}
-\usepackage{graphicx, subcaption, float, wrapfig, lipsum}
-\graphicspath{ {./Diagrams/} }
+\usepackage{graphicx, subcaption, float, wrapfig}
+\graphicspath{ {./Images/} }
 \makeatletter
 \newcommand*{\currentname}{\@currentlabelname}
 \makeatother
@@ -25,142 +25,150 @@
 %------------------------------------------------------------------------------------
 \section{Scope}
 
-The project main purpose is to provide programmers with a tool to monitor their statistics regarding their coding sessions.
+The project main purpose is to provide programmers with a tool to monitor their statistics regarding the coding sessions.
+The plugin we created is intended for the Atom editor \footnote{\href{https://atom.io/}{Atom homepage}}, an open source text editor based on Electron. \\
 	In particular the Atom-Logger plugin captures added, modified or deleted lines of code, comments and tests. It also intercepts Atom's \textbf{native functions}. On the contrary it ignores operations such as \emph{cut, backspace, paste, enter, copy, save, undo, redo}.\\
 	The users can observe their data usage both via a web interface \textbf{dashboard}, that also shows working time on given files, or inspecting the plugin interface itself, which shows \textbf{charts} related to the last seven days activity.\\
-The programming languages we used are JavaScript, as requested for every Atom's package.\\
-\textbf{Osservazione (da verificare)} Differenze tra Java e Javascript: meno linee di codice, Documentarlo perchè è interessante.\\ %TODO
+The programming languages we used are JavaScript and CSS, as requested for every Atom package.\\
+In the following tables you can see the information we gathered using \textbf{cloc} \footnote{\href{https://github.com/AlDanial/cloc}{https://github.com/AlDanial/cloc}}, a tool that \textit{counts blank lines, comment lines, and physical lines of source code in many programming languages}. 
 
-\begin{center}
- \begin{tabular}{|c | c | c | c | c |}
- \hline
- \multicolumn{5}{|c|}{Atom editor source code statistics *}\\
- \hline
- Language & files & blank & comment & loc \\ [0.5ex] 
- \hline\hline
- JavaScript & 349 & 13'593 & 10'137 & 139'139\\ 
- \hline
- JSON & 95 & 5 & 0 & 36'009\\ 
- \hline
- LESS & 206 & 2'442 & 1'217 & 11'223\\
- \hline
- Markdown & 77 & 2'892 & 0 & 7'362\\
- \hline
- CoffeeScript & 75 & 1'139 & 437 & 4'874\\
- \hline
- XML & 3 & 0 & 0 & 1'608\\
- \hline
- CSON & 51 & 102 & 83 & 1'601\\
- \hline
- YAML & 10 & 103 & 34 & 678\\
- \hline
- Bourne Shell & 13 & 95 & 187 & 507\\
- \hline
- SVG & 5 & 0 & 0 & 128\\
- \hline
- DOS Batch & 8 & 6 & 0 & 79\\
- \hline
- CSS & 9 & 1 & 2 & 33\\
- \hline
- Dockerfile & 1 & 4 & 4 & 12\\
- \hline
- HTML & 1 & 0 & 0 & 9\\
- \hline
- EJS & 1 & 2 & 0 & 7\\
- \hline
- TypeScript & 2 & 0 & 0 & 3\\
- \hline
- Ruby & 1 & 1 & 0 & 2\\ 
- \hline
- \hline
- Total & 907 & 20'385 & 12'101 & 203'274\\ [1ex]
- \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
- \begin{tabular}{|c | c | c | c | c |}
- \hline
- \multicolumn{5}{|c|}{Atom-Logger source code statistics *}\\
- \hline
- Language & files & blank & comment & loc \\ [0.5ex] 
- \hline\hline
- JSON & 4 & 0 & 0 & 3661\\
- \hline
- JavaScript & 15 & 218 & 56 & 1'039\\
- \hline
- TeX & 1 & 61 & 0 & 91\\
- \hline
- LESS & 1 & 11 & 4 & 46\\
- \hline
- Markdown & 1 & 15 & 0 & 17\\
- \hline
- XML & 1 & 0 & 0 & 11\\
- \hline
- \hline
- Total: & 23 & 305 & 60 & 4'865\\ [1ex]
- \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
- \begin{tabular}{|c | c | c | c | c |}
- \hline
- \multicolumn{5}{|c|}{Eclipse-Logger source code statistics *}\\
- \hline
- Language & files & blank & comment & loc \\ [0.5ex] 
- \hline\hline
- Java & 11 & 193 & 6 & 859\\
- \hline
- XML & 3 & 0 & 0 & 127\\
- \hline
- INI & 1 & 0 & 0 & 7\\
- \hline
- Markdown & 1 & 1 & 0 & 1\\
- \hline
- \hline
- Total: & 16 & 194 & 5 & 994\\ [1ex]
- \hline
-\end{tabular}
-\end{center}
-
-\begin{center}
- \begin{tabular}{|c | c | c | c | c |}
- \hline
- \multicolumn{5}{|c|}{Intellij-Logger source code statistics *}\\
- \hline
- Language & files & blank & comment & loc \\ [0.5ex] 
- \hline\hline
- XML & 40 & 3'167 & 0 & 64'883\\
- \hline
- Java & 52 & 981 & 4727 & 5581\\
- \hline
- SVG & 20 & 0 & 0 & 179\\
- \hline
- Bourne Shell & 1 & 21 & 22 & 129\\
- \hline
- DOS Batch & 1 & 23 & 2 & 59\\
- \hline
- Gradle & 2 & 8 & 2 & 29\\
- \hline
- \hline
- Total: & 116 & 4'200 & 4'753 & 70'860\\ [1ex]
- \hline
-\end{tabular}
-\end{center}
+\begin{table} [t]
+	\centering
+	\begin{tabular}{|c | c | c | c | c |}
+ 	\hline
+	\multicolumn{5}{|c|}{Atom editor source code statistics *}\\
+	\hline
+	Language & files & blank & comment & loc \\ [0.5ex] 
+	\hline\hline
+	JavaScript & 349 & 13'593 & 10'137 & 139'139\\ 
+	\hline
+	JSON & 95 & 5 & 0 & 36'009\\ 
+	\hline
+	LESS & 206 & 2'442 & 1'217 & 11'223\\
+	\hline
+	Markdown & 77 & 2'892 & 0 & 7'362\\
+	\hline
+	CoffeeScript & 75 & 1'139 & 437 & 4'874\\
+	\hline
+	XML & 3 & 0 & 0 & 1'608\\
+	\hline
+	CSON & 51 & 102 & 83 & 1'601\\
+	\hline
+	YAML & 10 & 103 & 34 & 678\\
+	\hline
+	Bourne Shell & 13 & 95 & 187 & 507\\
+	\hline
+	SVG & 5 & 0 & 0 & 128\\
+	\hline
+	DOS Batch & 8 & 6 & 0 & 79\\
+	\hline
+	CSS & 9 & 1 & 2 & 33\\
+	\hline
+	Dockerfile & 1 & 4 & 4 & 12\\
+	\hline
+	HTML & 1 & 0 & 0 & 9\\
+	\hline
+	EJS & 1 & 2 & 0 & 7\\
+	\hline
+	TypeScript & 2 & 0 & 0 & 3\\
+	\hline
+	Ruby & 1 & 1 & 0 & 2\\ 
+	\hline
+	\hline
+	Total & 907 & 20'385 & 12'101 & 203'274\\ [1ex]
+	\hline
+	\end{tabular}
+	\caption{\href{https://github.com/atom/atom}{github.com/atom/atom}}
+\end{table}
 
 
 
+\begin{table} [t]
+	\centering
+	\begin{tabular}{|c | c | c | c | c |}
+	\hline
+	\multicolumn{5}{|c|}{Atom-Logger source code statistics}\\
+	\hline
+	Language & files & blank & comment & loc \\ [0.5ex] 
+	\hline\hline
+	JSON & 4 & 0 & 0 & 3661\\
+	\hline
+	JavaScript & 15 & 218 & 56 & 1'039\\
+	\hline
+	TeX & 1 & 61 & 0 & 91\\
+	\hline
+	LESS & 1 & 11 & 4 & 46\\
+	\hline
+	Markdown & 1 & 15 & 0 & 17\\
+	\hline
+	XML & 1 & 0 & 0 & 11\\
+	\hline
+	\hline
+	Total: & 23 & 305 & 60 & 4'865\\ [1ex]
+	\hline
+	\end{tabular}
+	\caption{\href{http://aminsep.disi.unibo.it/gitlab/css/atom-logger/}{aminsep.disi.unibo.it/gitlab/css/atom-logger/}}
+\end{table}
+\clearpage
 
+Here we gathered data about the counterparts written in Java for IntelliJ IDEA and Eclipse.
 
+\begin{table} [h]
+	\centering
+	\begin{tabular}{|c | c | c | c | c |}
+	\hline
+	\multicolumn{5}{|c|}{Eclipse-Logger source code statistics *}\\
+	\hline
+	Language & files & blank & comment & loc \\ [0.5ex] 
+	\hline\hline
+	Java & 11 & 193 & 6 & 859\\
+	\hline
+	XML & 3 & 0 & 0 & 127\\
+	\hline
+	INI & 1 & 0 & 0 & 7\\
+	\hline
+	Markdown & 1 & 1 & 0 & 1\\
+	\hline
+	\hline
+	Total: & 16 & 194 & 5 & 994\\ [1ex]
+	\hline
+	\end{tabular}
+	\caption{\href{http://aminsep.disi.unibo.it/cas-project/latest/plugins/EclipseLogger_1.0.0.201901141717.jar}{aminsep.disi.unibo.it/cas-project/latest/plugins}}
+\end{table}
 
+\begin{table} [h]
+	\centering
+	\begin{tabular}{|c | c | c | c | c|}
+	\hline
+	\multicolumn{5}{|c|}{Intellij-Logger source code statistics *}\\
+	\hline
+	Language & files & blank & comment & loc \\ [0.5ex] 
+	\hline\hline
+	XML & 40 & 3'167 & 0 & 64'883\\
+	\hline
+	Java & 52 & 981 & 4727 & 5581\\
+	\hline
+	SVG & 20 & 0 & 0 & 179\\
+	\hline
+	Bourne Shell & 1 & 21 & 22 & 129\\
+	\hline
+	DOS Batch & 1 & 23 & 2 & 59\\
+	\hline
+	Gradle & 2 & 8 & 2 & 29\\
+	\hline
+	\hline
+	Total: & 116 & 4'200 & 4'753 & 70'860\\ [1ex]
+	\hline
+	\end{tabular}
+	\caption{\href{https://gitlab.com/fulvio1993/logger-intellij}{gitlab.com/fulvio1993/logger-intellij}}
+\end{table}
 
-\newpage
-%\begin{wrapfigure}{R}{2cm}
+\clearpage
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.55\linewidth]{main}
 	\caption{The main interface}
+	\includegraphics[width=4cm]{main}
 	\label{fig:main}
 \end{figure}
 
@@ -173,6 +181,7 @@ After the users successfully log in they are presented a pane as shown in Figure
 	\item One chart for comments changes;
 	\item One chart for tests changes.
 \end{itemize}
+
 
 \newpage
 If the users prefer, they can do some changes in the settings (Figure \ref{fig:settings}).
@@ -229,7 +238,7 @@ Instead in figure \ref{fig:web} we can see how a generic user (registered or not
 %****************************************************************************************
 \chapter{Description of CAS services} %TODO
 %------------------------------------------------------------------------------------
-\section[Taiga]{Taiga} %TODO
+\section[Taiga]{Taiga} %TODO Aggiungere screen sprint e backlog (Carlos)
 Taiga gave us the opportunity to manage our project in an \textbf{Agile} way. \\
 In our case study we have used the \textbf{Kanban} feature to create several \textbf{user stories}, to split the coding of the various features and functions in smaller tasks. With the \textbf{Backlog} module we were able to monitor the overall progress of our work, keeping track of project points as user stories were completed. When one of us had something to report to the team, i.e. a bug or a problem not expected, he could add a new issue through the \textbf{Issues} module.
 Also we used the \textbf{Meet up} option to start voice/video calls, we linked it with our messaging platform.
@@ -248,41 +257,84 @@ In order to use Taiga we simply signed up to the self-hosted image running on th
     \label{fig:taiga2}
 \end{figure}
 %------------------------------------------------------------------------------------
-\section{Sonar} %TODO
-We used \textbf{SonarScanner} to perform static code analysis, because this was done on a machine that runs Manjaro Linux and therefore there were not any specific scanners built for that operating system. Once again the server was the one hosted by aminsep, with preset rules to detect various code smells, security vulnerabilities and bugs. 
+\section{Sonar}
+We used \textbf{SonarScanner}, a CLI scanner for SonarQube and SonarCloud to perform static code analysis, because this was done on a machine that runs Manjaro Linux and therefore there were not any specific scanners built for that operating system. Once again the server was the one hosted by aminsep, with preset rules to detect various code smells, security vulnerabilities and bugs. 
 In the first place we have been given personal accounts registered on the platform, we created a \textbf{token} linked to our project, so that every time we ran a new analysis the tool could dialogue with the server using the token to determine which project the data belonged to.
-We ran an analysis every time we had produced a new version of the project, using the scanner via CLI. The results were stored on the server.
+We ran an analysis every time we had produced a \textbf{new version} of the project, using the scanner via CLI. The results were stored on the server.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\linewidth]{sonar1}
+    \caption{Sonar project overview page}
+    \label{fig:sonar1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\linewidth]{sonar2}
+    \caption{Sonar project issues page}
+    \label{fig:sonar2}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
     \includegraphics[width=\linewidth]{sonar-scanner}
-    \caption{Sonar.}
-    \label{fig:sonar}
+    \caption{command with parameters and options used to run analysis}
+    \label{fig:sonar-scanner}
 \end{figure}
 %------------------------------------------------------------------------------------
-\section[GitLab] {GitLab} %TODO
+\section[GitLab] {GitLab} 
 Gitlab is a web platform that we used to manage our \textbf{git-repository} via CLI, web interface and IDE plugins.
 As for our project we mostly made use of pre-existant plugins provided for the IDEs we used (i.e. Code-OSS, Atom, Eclipse) for the client side, and the instance hosted by the aminsep server for the server side. The web interface was sometimes used for commits or inspecting code, lastly the CLI was used only once to remove some sensitive data accidentally committed.
+\begin{figure} [ht]
+	\centering
+	\begin{subfigure}{0.4\linewidth}
+		\centering
+    	\includegraphics[width=0.9\textwidth]{atom-git}
+    	\caption{Atom Git plugin}
+	\end{subfigure}
+	\hspace{0.5cm}
+	\begin{subfigure}{0.4\linewidth}
+		\centering
+    	\includegraphics[width=0.9\textwidth]{code-git}
+    	\caption{Code-OSS Git plugin}
+	\end{subfigure}
+	\caption{Git integration plugins used by our team on the client side}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{gitlab}
+	\caption{Atom-Logger GitLab page}
+\end{figure}
 %------------------------------------------------------------------------------------
-\section[Mattermost] {Mattermost} %TODO
+\section[Mattermost] {Mattermost} 
 Mattermost is a self-hosted messaging platform, available for the vast majority of desktop and mobile devices. It allows to organize conversations in teams and channels, so that you can keep in touch with other team members using text messages, sending files or images. \\
-\textbf{As for our experience we did not find Mattermost useful, since the lack of the voice call and screen sharing features which we consider fundamental}. For this reason we opted for the use of external services, one for voice and video calls and one for text messaging and file sharing.\\
-Since the \textbf{SARS-CoV-2 pandemic} started we've not been able to meet or work together in the same room, therefore the so called "smart-working" has been of great help as in fact we only once had the chance to work together in person. \\
+We tried to use it in the beginning, \textbf{but as for our concern we did not find Mattermost useful, since the lack of the voice call and screen sharing features which we consider crucial}. For this reason we opted for the use of external services, one for voice and video calls and one for text messaging and file sharing.\\
+Since the \textbf{SARS-CoV-2 pandemic} started we've not been able to meet or work together in the same room, therefore the so called \textbf{smart-working} has been of great help as in fact we only once had the chance to work together in person. \\
 In the beginning we had voice calls for the planning and design phase, later on we scheduled weekly meetings to track the progress of the process and used daily/random meetings in case some of us needed to talk to another member to figure out something he had a problem with.
-During the developing and testing phase we mostly used screen sharing for debugging and pair programming: one of us shared his screen while working on the code, the others reviewed the code produced.
+During the developing and testing phase we mostly used screen sharing for \textbf{debugging} and \textbf{pair programming}: one of us shared his screen while working on the code, the others reviewed the code produced.
 %****************************************************************************************
 \chapter{Description of artifacts} %TODO
-Scrum Artifacts (3:48)
-
-In this module, you’ll see how the three Scrum Artifacts — the Product Backlog, the Sprint Backlog, and the product Increment — share the same goals: to maximize transparency, and promote a shared understanding of the work. Main takeaway: The Product Backlog and Sprint Backlog describe work to be "Done" that will add value, and the product Increment is the “Done” portion of the product completed during a Sprint.
+%Scrum Artifacts (3:48)
+%
+%In this module, you’ll see how the three Scrum Artifacts — the Product Backlog, the Sprint Backlog, and the product Increment — share the same goals: to maximize transparency, and promote a shared understanding of the work. Main takeaway: The Product Backlog and Sprint Backlog describe work to be "Done" that will add value, and the product Increment is the “Done” portion of the product completed during a Sprint.
 %------------------------------------------------------------------------------------
 \section{Product Backlog} %TODO
 %------------------------------------------------------------------------------------
 \section{Sprint Backlog} %TODO
 %------------------------------------------------------------------------------------
-\section{Product Increment} %TODO
-In other more freeform agile frameworks, such as Kanban (see What is Kanban), product increments are also created but they are less commonly based upon what is completed in a fixed period, and more so on what is meaningful for the product to be released into production. This might mean that product increments could be released in cycles ranging from minutes to months.\\
-\textbf{Dato che abbiamo fatto un solo sprint di produzione non ha senso parlare di PI}
+\section{Product Increment} %TODO Mi servono gli sprint definitivi Carlos
+%In other more freeform agile frameworks, such as Kanban (see What is Kanban), product increments are also created but they are less commonly based upon what is completed in a fixed period, and more so on what is meaningful for the product to be released into production. This might mean that product increments could be released in cycles ranging from minutes to months.} (definizione) 
+Basically we had two major Product Increments:
+\begin{enumerate}
+	\item Features regarding the collection of data on the machine, the login of the users and the retrieval of data stored on the remote database;
+	\item Features to store the collected metrics on the remote database;
+\end{enumerate}
+	
+%Tre sprint:
+%ultimo con enhancements
+%primo raccolta dati locale, e GET dei dati sul server
+%secondo spedizione dati sul server, POST dati sul server
 %****************************************************************************************
 \chapter{Conclusions} %TODO
 %------------------------------------------------------------------------------------
@@ -291,8 +343,8 @@ In other more freeform agile frameworks, such as Kanban (see What is Kanban), pr
 	
 	\item Adopting the Agile philosophy is no easy task, especially for someone who has no practical experience on the matter, but we think it is the best way of managing a project. After you get accustomed to, it feels natural and just right.\\
 	Our vision on how to approach a project has changed, in better we believe. It is for sure more clear and organized than before.
-	\item Face to face meetings are for sure what the human brain can get the best from in a working environment.\footnote{\href{https://www.entrepreneur.com/article/296590}{entrepreneur article}} But conference calls are a useful ally as we mentioned early, and the realization of this project would not have been possible without the tools we used. 
-	%TODO add reference https://www.sciencedirect.com/science/article/pii/S002210311630292X
+	\item Face to face meetings are for sure what the human brain can get the best from in a working environment.
+	But conference calls are a useful ally as we mentioned early, and the realization of this project would not have been possible without the tools we used. 
 	\item When working in a team, using a version control system (i.e. GitLab) is mandatory. It takes off the table the overhead of keeping all files in sync, provides a plain vision of what has changed between different versions of the same file and last but not least allows you to do rollbacks safely.
 \end{itemize}
 %------------------------------------------------------------------------------------
@@ -300,14 +352,16 @@ In other more freeform agile frameworks, such as Kanban (see What is Kanban), pr
 %------------------------------------------------------------------------------------
 \begin{itemize}
 	\item As mentioned before we worked only from \textbf{distance}: this way of developing can be very useful in \textbf{emergency situations} like the one we have been in, or for teams that have members that live \textbf{far away} from one another.
+	It also serves well for pair programming or debugging when two or more members of the team have to work and they are not in the same room.
 	\item The practice of writing \textbf{User Stories} not only gives the team a more clear vision of what the features of the product are, but also helps managing the complexity of the whole project: ideally each story addresses one functionality of the product, allowing the developer to focus only on that specific piece of code, leaving the rest for later. This is a key also to distribute the work between all the members of the team.
 	\item Running \textbf{static analysis} on code gives you a first feedback of what you wrote, before delving into debugging and testing, this often results in minutes, maybe hours of precious time saved. It is pretty useful to see all the security vulnerabilities, code smells and bugs to fix with the very number of the line of code they are located.
 \end{itemize}
 \section{What we think should change} %DONE
 \begin{itemize}
-	\item We unfortunately did not make any use of \textbf{Mattermost}, because without video-calls and screen-sharing we struggled a lot. These, we think, are features that are crucial when a team has to work from different places. It would be preferable if \textbf{another version} of Mattermost was given to the students, one with the aforementioned features.
+	\item We unfortunately did not make any use of \textbf{Mattermost}, because without video-calls and screen-sharing we struggled a lot. These, we think, are features that are crucial when the members of a team have to work from different locations. It would be preferable if \textbf{another version} of Mattermost were given to the students, one with the aforementioned features.
 	\item It is not really convenient to have different accounts for every service, it would be reasonable to implement a single sign-on.
-	\item Putting together a team of people who have no agile experience requires an adaptation period to understand how to use the various tools. Because of this, in the beginning operations took a little bit longer. It would be useful to have a little introduction to the CAS environment before.
+	\item Putting together a team of people who have no agile experience requires an adaptation period to understand how to use the various tools. Because of this, in the beginning operations took a little bit longer. It would be useful to have an introduction to the CAS environment before.
+	\item We encountered some odd problems after a user had sent a significative number of metrics to the innometrics server: in fact we think there is some kind of upper limit that if exceeded no longer allows the user to post any data in the database.
 
 \end{itemize}
 
@@ -321,7 +375,10 @@ In other more freeform agile frameworks, such as Kanban (see What is Kanban), pr
 
 
 \begin{abstract}
-	%TODO ?
+	The aim of the project is in first place to create a plugin for the Atom IDE, but also to provide an overview of the CAS environment, to focus on its strengths but also to suggest enhancements so to make it usable in a real case scenario.\\
+	- Open source software alternatives
+	
+	
 \end{abstract}
 
 
