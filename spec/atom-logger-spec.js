@@ -1,7 +1,5 @@
 'use babel';
 
-import AtomLogger from '../lib/atom-logger';
-
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
