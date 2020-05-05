@@ -15,29 +15,26 @@ describe('AtomLogger', () => {
     activationPromise = atom.packages.activatePackage('atom-logger');
   });
 
-  describe('when the atom-logger:toggle event is triggered', () => {
+  describe('when the atom-logger:dashboard event is triggered', () => {
     it('hides and shows the modal panel', () => {
-      // Before the activation event the view is not on the DOM, and no panel
-      // has been created
-      expect(workspaceElement.querySelector('.atom-logger')).not.toExist();
+      // After activation of package the view is on the DOM
+      expect(workspaceElement.querySelector('.atom-logger')).toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'atom-logger:toggle');
+      atom.commands.dispatch(workspaceElement, 'atom-logger:dashboard');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.atom-logger')).toExist();
-
         let atomLoggerElement = workspaceElement.querySelector('.atom-logger');
         expect(atomLoggerElement).toExist();
 
         let atomLoggerPanel = atom.workspace.panelForItem(atomLoggerElement);
         expect(atomLoggerPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'atom-logger:toggle');
+        atom.commands.dispatch(workspaceElement, 'atom-logger:dashboard');
         expect(atomLoggerPanel.isVisible()).toBe(false);
       });
     });
@@ -51,11 +48,9 @@ describe('AtomLogger', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.atom-logger')).not.toExist();
-
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'atom-logger:toggle');
+      atom.commands.dispatch(workspaceElement, 'atom-logger:dashboard');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -65,7 +60,7 @@ describe('AtomLogger', () => {
         // Now we can test for view visibility
         let atomLoggerElement = workspaceElement.querySelector('.atom-logger');
         expect(atomLoggerElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'atom-logger:toggle');
+        atom.commands.dispatch(workspaceElement, 'atom-logger:dashboard');
         expect(atomLoggerElement).not.toBeVisible();
       });
     });
