@@ -15,4 +15,4 @@ Atom editor activity logger
   > apm link
 ```
 
-And then restart Atom.
+Restart Atom.
