@@ -10,9 +10,11 @@ Atom editor activity logger
 * Install dependencies:
 
 ```bash
-  > apm install
+   apm install
 
-  > apm link
-```
+   apm link
+```  
+* Restart Atom.
 
-Restart Atom.
+* Set server address in atom-Logger package settings
+  (SWE students must use http://aminsep.disi.unibo.it/innometrics/api)
