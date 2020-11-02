@@ -25,7 +25,7 @@
     "jsdifflib": "^1.1.0",
     "network": "^0.5.0",
     "simple-node-logger": "^18.12.24",
-    "sqlite3": "^4.1.1",
+    "sqlite3": "^4.2.0",
     "user-home": "^2.0.0"
   },
   "devDependencies": {
