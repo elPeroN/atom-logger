@@ -16,5 +16,10 @@ Atom editor activity logger
 ```  
 * Restart Atom.
 
-* Set server address in atom-Logger package settings
-  (SWE students must use http://aminsep.disi.unibo.it/innometrics/api)
+
+### FAQ
+* Which server should I enter?
+
+```
+If you are SWE student must use "aminsep.disi.unibo.it/innometrics/api" under HTTP protocol
+```
