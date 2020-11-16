@@ -1,7 +1,7 @@
 {
   "name": "atom-logger",
   "main": "./lib/atom-logger",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Activity Logger for Atom",
   "consumedServices": {
     "status-bar": {
@@ -11,7 +11,7 @@
     }
   },
   "keywords": [],
-  "repository": "http://aminsep.disi.unibo.it/gitlab/css/atom-logger",
+  "repository": "https://github.com/elPeroN/atom-logger",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
