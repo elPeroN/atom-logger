@@ -32,12 +32,5 @@
     "electron": "^4.2.12",
     "electron-builder": "^22.3.2",
     "electron-rebuild": "^1.10.0"
-  },
-  "scripts": {
-    "start": "npm install && electron .",
-    "postinstall": "install-app-deps",
-    "dist": "electron-builder",
-    "pack": "electron-builder --dir",
-    "rebuild": "electron-rebuild -f -w sqlite3"
   }
 }
