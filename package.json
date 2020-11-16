@@ -34,9 +34,10 @@
     "electron-rebuild": "^1.10.0"
   },
   "scripts": {
-    "start": "electron .",
-    "postinstall": "electron-builder install-app-deps",
-    "dist": "build",
+    "start": "npm install && electron .",
+    "postinstall": "install-app-deps",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
     "rebuild": "electron-rebuild -f -w sqlite3"
   }
 }
