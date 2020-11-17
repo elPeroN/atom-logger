@@ -17,6 +17,10 @@
             {
               "label": "Dashboard",
               "command": "atom-logger:dashboard"
+            },
+            {
+              "label": "Logout",
+              "command": "atom-logger:logout"
             }
           ]
         }

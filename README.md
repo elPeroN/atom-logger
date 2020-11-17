@@ -1,21 +1,19 @@
 # Atom Logger
 Atom editor activity logger
 
-##  Install atom-logger
+##  Installation
 
-* Git clone this repository.
+Installing Atom-Logger is simple. You can find it in the atom.io package registry, or simply run in terminal:
+``` bash
+apm install atom-logger
+```
+## Usage
+All commands can be invoked from `Packages`→`atom-logger` menu or from the command palette. Alternatively, keybindings are provided.
 
-* Switch to the root directory of the clone on your local disk.
-
-* Install dependencies:
-
-```bash
-   apm install
-
-   apm link
-```  
-* Restart Atom.
-
+| Command               | Default Keybind                             | Function |
+|-----------------------|---------------------------------------------|----------|
+| `atom-logger:dashboard` | <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>o</kbd> | Open Dashboard |
+| `atom-logger:logout` | <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>l</kbd>| Logout from server|
 
 ### FAQ
 * Which server should I enter?
