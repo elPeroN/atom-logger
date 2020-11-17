@@ -16,8 +16,5 @@ All commands can be invoked from `Packages`→`atom-logger` menu or from the com
 | `atom-logger:logout` | <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>l</kbd>| Logout from server|
 
 ### FAQ
-* Which server should I enter?
-
-```
-If you are SWE student must use "aminsep.disi.unibo.it/innometrics/api" under HTTP protocol
-```
+- Which server should I enter?
+ - If you are SWE student must use "aminsep.disi.unibo.it/innometrics/api" under HTTP protocol
