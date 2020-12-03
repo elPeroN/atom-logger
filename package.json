@@ -1,7 +1,7 @@
 {
   "name": "atom-logger",
   "main": "./lib/atom-logger",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Activity Logger for Atom",
   "consumedServices": {
     "status-bar": {
