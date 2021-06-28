@@ -17,4 +17,4 @@ All commands can be invoked from `Packages`→`atom-logger` menu or from the com
 
 ### FAQ
 - Which server should I enter?
- - If you are SWE student must use "aminsep.disi.unibo.it/innometrics/api" under HTTP protocol
+ - If you are SWE student must use "aminsep.disi.unibo.it/logger" under HTTPS protocol
